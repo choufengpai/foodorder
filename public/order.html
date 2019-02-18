@@ -1,0 +1,127 @@
+<!doctype html>
+
+<html ng-app="emerilOrder">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>FoodOrder</title>
+
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+	<link rel="stylesheet" href="./css/main.css">
+
+	<script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<script src="js/controllers/main.js"></script> 
+	<script src="js/services/orders.js"></script> 
+	<script src="js/core.js"></script>
+
+
+</head>
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+	<header id="luxbar" class="luxbar-fixed"  >
+			<input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+			<div class="luxbar-menu luxbar-menu-right luxbar-menu-material-red">
+				<ul class="luxbar-navigation">
+					<li class="luxbar-header">
+						<a href="/order" class="luxbar-brand">FOODORDER</a>
+						<label class="luxbar-hamburger luxbar-hamburger-doublespin" 
+						id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+					</li>
+					<li class="luxbar-item"><a href="#one">Meal</a></li>
+					<li class="luxbar-item"><a href="#two">Drink</a></li>
+					<li class="luxbar-item"><a href="#three">Dessert</a></li>
+					<li class="luxbar-item" style="background-color:orange"><a href="/history">Today's Order</a></li>
+					<li class="luxbar-item" style="background-color:gray"><a href="/logout">Exit</a></li>
+				</ul>
+			</div>
+	</header>
+	<!--
+	<div style="text-align:center" >
+		<img src="./img/carousal1.jpg"></img></br>
+	</div>
+	-->
+	<div id="one"></div>
+	<div id="myCarousel" class="carousel slide" >
+			
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+			</ol>   
+	
+			<div class="carousel-inner">
+				<div class="item active" >
+					<img src="./img/carousal2.jpg" alt="First slide">
+				</div>
+				<div class="item" >
+					<img src="./img/carousal1.jpg" alt="Second slide">
+				</div>
+
+			</div>
+		
+			<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
+		</div> 
+
+	
+	<div class="category">Meal</div>
+	<div class="container"  class="ng-control" ng-model="formData.name" style="text-align:center">
+		<div id="menublock" class="col-xs-12 col-md-4"  ng-repeat="food in foodList1" >
+			<img src="{{food.url}}" height="240" width="240"></img></br>
+			<div id="menutittle">{{food.name}}</div>
+			<div id="menudescription">{{food.description}}</div>
+			<div id="menuprice">Price: ${{food.price}}</div>
+			<div id="menubutton">
+				<button class="btn btn-danger" type="submit" ng-click="createOrder(food.name)" >Order</button>
+			</div>
+			
+		</div>
+	</div>
+
+	<div id="two"></div>
+	<div class="category">Drink</div>
+	<div class="container"  class="ng-control" ng-model="formData.name" style="text-align:center">
+			<div id="menublock" class="col-xs-12 col-md-4"  ng-repeat="food in foodList2" >
+				<img src="{{food.url}}" height="240" width="240"></img></br>
+				<div id="menutittle">{{food.name}}</div>
+				<div id="menudescription">{{food.description}}</div>
+				<div id="menuprice">Price: ${{food.price}}</div>
+				<div id="menubutton">
+					<button class="btn btn-danger" type="submit" ng-click="createOrder(food.name)" >Order</button>
+				</div>
+				
+			</div>
+		</div>
+
+	<div id="three"></div>
+	<div id="three" class="category">Dessert</div>
+	<div class="container"  class="ng-control" ng-model="formData.name" style="text-align:center">
+			<div id="menublock" class="col-xs-12 col-md-4"  ng-repeat="food in foodList3" >
+				<img src="{{food.url}}" height="240" width="240"></img></br>
+				<div id="menutittle">{{food.name}}</div>
+				<div id="menudescription">{{food.description}}</div>
+				<div id="menuprice">Price: ${{food.price}}</div>
+				<div id="menubutton">
+					<button class="btn btn-danger" type="submit" ng-click="createOrder(food.name)" >Order</button>
+				</div>
+				
+			</div>
+		</div>
+	
+	<div id="copyright">
+		Project for COMP5321 @HK POLYU<br>
+		Copyright© WANGDI & LIUHUACHUAN
+	</div>
+</body>
+</html>
+

@@ -1,0 +1,89 @@
+<!doctype html>
+
+<html ng-app="emerilOrder">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1"><!-- Optimize mobile viewport -->
+	<title>History Order</title>
+
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"><!-- load bootstrap -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script><!-- load angular -->
+	<script src="js/controllers/main.js"></script> <!-- load up our controller -->
+	<script src="js/services/orders.js"></script> <!-- load our order service -->
+	<script src="js/core.js"></script> <!-- load our main application -->
+	<link rel="stylesheet" href="https://cdn.rawgit.com/balzss/luxbar/ae5835e2/build/luxbar.min.css">
+	<link rel="stylesheet" href="./css/history.css">
+
+</head>
+
+<!-- SET THE CONTROLLER -->
+<body ng-controller="mainController">
+	<header id="luxbar" class="luxbar-fixed">
+			<input type="checkbox" class="luxbar-checkbox" id="luxbar-checkbox"/>
+			<div class="luxbar-menu luxbar-menu-right luxbar-menu-material-red">
+				<ul class="luxbar-navigation">
+					<li class="luxbar-header">
+						<a href="/order" class="luxbar-brand">FOODORDER</a>
+						<label class="luxbar-hamburger luxbar-hamburger-doublespin" 
+						id="luxbar-hamburger" for="luxbar-checkbox"> <span></span> </label>
+					</li>
+				
+					<li class="luxbar-item" style="background-color:orange"><a href="/history">Today's Order</a></li>
+					<li class="luxbar-item" style="background-color:gray"><a href="/logout">Exit</a></li>
+				</ul>
+			</div>
+	</header>
+  
+	<div class="container">
+
+		<div id="title">Today's Order</div>
+		<table  class="table table-hover" style="border:'1'">
+			<tr id="tabletittle">
+				<th>Order Time</th>
+				<th>Dish Name</th>
+				<th>Price</th>
+				<th>Operate</th>
+			</tr>
+        	<tr ng-repeat="order in orders" >
+				<td class="createdate">{{order.theday}}</td>
+				<td>{{order.name}}</td>
+          		<td>{{order.price}}</td>
+				<td><input style="text-align: center" type="button" value="Delete" ng-click="deleteOrder(order._id,order.createdate)" style="float:right"></td>
+       		</tr>
+		</table>
+		
+	</div>
+<!--
+	<script>
+		function timeStampToTime(timestamp){ // 时间戳转为时间
+			var date = new Date(timestamp);
+			Y = date.getFullYear() + '-';
+			M = (date.getMonth()+1 < 10 ? '0'+(date.getMonth()+1) : date.getMonth()+1) + '-';
+			D = date.getDate() + ' ';
+			h = date.getHours() + ':';
+			m = date.getMinutes() + ':';
+			s = date.getSeconds();
+			var time = Y+M+D;
+			return time;
+		}
+		
+			var createdate = document.getElementsByClassName('createdate');
+			console.log(createdate,createdate.length);
+			for(var item of createdate){
+				console.log(item);
+				console.log(createdate[i].innerHTML);
+				console.log(createdate[i].innerText);
+				console.log(createdate[i]);
+				createdate[i].innerHTML = timeStampToTime(createdate[i].innerHTML);
+			}
+			console.log('???');
+		
+			
+	</script>
+-->
+
+</body>
+</html>
+

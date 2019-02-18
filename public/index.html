@@ -1,0 +1,58 @@
+<!doctype html>
+
+<html ng-app="emerilOrder">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Login</title>
+
+	
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="./css/login.css">
+
+<!--
+	<script src="http://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.16/angular.min.js"></script>
+	<script src="js/controllers/main.js"></script> 
+	<script src="js/services/orders.js"></script> 
+	<script src="js/core.js"></script>
+	-->
+</head>
+
+<body ng-controller="mainController" >
+	<div>
+
+	<div >
+		<div id="panel" >
+				<div id="title" style="color:black">
+						FOOD ORDER
+				</div>
+				<div id="input">
+					<form action="/login" method="post">
+						<div style="margin:10px 0; color: white;font-size: 16px">
+							<label style="color:black">Username:</label>
+							<input style="color:black" text name="username"/>
+						</div>
+						<div style="margin:10px 0; color: white ;font-size: 16px">
+							<label style="color:black">Password:</label>
+							<input style="color:black" type="password" name="password"/>
+						</div>
+						<div style="margin:30px 0">
+							<input class="btn btn-success" type="submit" value="Log In" style="width:270	px"/>
+						</div>
+						<div style="margin:50px 0">
+							粤ICP备18155907号-1 <br/>
+							Account:admin PW:000000
+						</div>
+					</form>
+				</div>
+		</div>
+	</div>
+
+</div>
+</body>
+</html>
+

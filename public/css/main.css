@@ -1,0 +1,59 @@
+html { overflow-y:scroll; }
+body { padding-top:80px; }
+
+button {
+    background-color: white;
+    float:right;
+    margin:0;
+    padding:0;
+    width:30%
+}
+
+#menublock{
+    font-size: 20px;
+    margin: 20px 0;
+    padding:0 36px;
+    
+}
+
+#menutittle{
+    margin:10px 0 0 0;
+    padding:0 32px;
+    font-size:20px;
+    text-align:left;
+}
+
+#menuprice{
+    font-size:20px;
+    margin:3px 0;
+    padding:0 32px;
+    text-align:left;
+    color:red;
+}
+
+#menudescription{
+    margin:3px 0 0 0;
+    padding:0 32px;
+    font-size:14px;
+    text-align:left;
+    color:rgb(50,50,50);
+}
+
+#menubutton{
+    margin:3px 0 0 0;
+    padding:0 32px;
+    font-size:14px;
+    color:rgb(50,50,50);
+}
+
+.category{
+    margin:20px 0 0 85px;
+    font-size: 35px;
+}
+
+#copyright{
+    margin:30px 0 10px 0;
+    text-align: center;
+    font-size: 12px;
+    color: gray;
+}
